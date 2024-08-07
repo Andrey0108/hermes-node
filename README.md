@@ -4,44 +4,60 @@ Proyecto #Hermes para la agencia de viajes #ParcheTravels
 
 [Parche Travels](https://www.facebook.com/profile.php?id=61558957825128)
 
-## Colaborar
+# Colaborar
 
-Crear fork del repositorio:
+### Requisitos:
+
+> NodeJs: [NVM for Windows](https://youtu.be/xW3QUu_zhLo?si=cfQ8tgshPdUTfLz7)
+>
+> VsCode: [VsCode for Windows](https://youtu.be/Dm1kXrFhaeQ?si=TJOHwyByYIBS3tY2)
+>
+> Adicional (no requisito): [Github Copilot](https://youtu.be/cmg9Dlth_9k?si=w-txBeFj0WOOTnhV)
+>
+> Alternativa a copilot: [Codeium](https://codeium.com/)
+
+---
+
+- Crear fork del repositorio:
 [Hermes Backend](https://github.com/jfelipeq14/hermes-node)
 
-Clonar el repositorio (debe tener tu nombre de usuario:
+- Clonar el repositorio (debe tener tu nombre de usuario:
 
-    git clone https://github.com/username/hermes-node
+      git clone https://github.com/username/hermes-node
 
-Crear la rama con tu nombre + caracteristica o componente:
+- Instalar los paquetes necesarios (Primero revisa tu version de node: 20.16.0+):
 
-    git checkout -b username/auth
+      npm i
 
-Realizar los cambios necesarios.
+- Crear la rama con tu nombre + caracteristica o componente:
 
-Subir los cambios:
+      git checkout -b username/auth
 
-    git add .
-    git commit -m "mensaje del commit"
-    git push origin nombreRama
+- Realizar los cambios necesarios.
 
-Realizar el pull request explicando que hizo en sus cambios (corregir errores, agregar funcionalidad, modificar componentes y demás).
+- Subir los cambios:
 
-Avisar sobre los cambios y esperar la review.
+      git add .
+      git commit -m "mensaje del commit"
+      git push origin nombreRama
 
-Obtener los cambios en el repositorio: Ir a su repositorio de github y actualizar su rama develop.
+- Realizar el pull request explicando que hizo en sus cambios (corregir errores, agregar funcionalidad, modificar componentes y demás).
 
-Obtener cambios en el proyecto local:
+- Avisar sobre los cambios y esperar la review.
 
-    git fetch origin develop
-    git pull origin develop
+- Obtener los cambios en el repositorio: Ir a su repositorio de github y actualizar su rama develop.
 
-Cambiar de rama para realizar la siguiente tarea (cada tarea necesita su rama):
+- Obtener cambios en el proyecto local:
 
-    git checkout develop
-    git checkout -b username/task
+      git fetch origin develop
+      git pull origin develop
 
-Repetir el proceso.
+- Cambiar de rama para realizar la siguiente tarea (cada tarea necesita su rama):
+
+      git checkout develop
+      git checkout -b username/task
+
+- Repetir el proceso omitiendo la clonacion y la instalacion de los paquetes.
 
 ## Hermesianos
 
