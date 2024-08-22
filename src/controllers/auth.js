@@ -1,3 +1,5 @@
+import bcrypt from 'bcryptjs'
+
 export class AuthController {
   constructor ({ authModel }) {
     this.authModel = authModel
@@ -14,7 +16,13 @@ export class AuthController {
   }
 
   register = async (req, res) => {
-    const data = await this.authModel.register()
-    res.end(data)
+    const user = req.body
+    try {
+      user.password = await bcrypt.hash(user.password, 10)
+      const data = await this.authModel.register(req.body)
+      res.status(201).json(data)
+    } catch (e) {
+      res.status(409).json(e)
+    }
   }
 }

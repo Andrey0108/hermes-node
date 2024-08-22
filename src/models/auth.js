@@ -1,8 +1,8 @@
 import { pool } from '../db.js'
 
 export class AuthModel {
-  async login () {
-    const { rows } = await pool.query('SELECT * FROM permissions')
+  async login (user) {
+    const { rows } = await pool.query('SELECT * FROM user WHERE email = $1 AND password = $2', [user.email, user.password])
     return rows
   }
 
@@ -10,7 +10,8 @@ export class AuthModel {
     return 'logout'
   }
 
-  async register () {
-    return 'register'
+  async register (user) {
+    const { rows } = await pool.query('INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *', [user.email, user.password])
+    return rows
   }
 }
