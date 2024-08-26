@@ -3,18 +3,23 @@ export class AuthController {
     this.authModel = authModel
   }
 
-  login = async (req, res) => {
-    const data = await this.authModel.login()
-    res.json(data)
+  get = async (req, res) => {
+    const data = await this.authModel.get()
+    res.status(200).json(data)
   }
 
-  logout = async (req, res) => {
-    const data = await this.authModel.logout()
-    res.end(data)
+  post = async (req, res) => {
+    const data = await this.authModel.post(req.body)
+    res.status(201).json(data)
   }
 
-  register = async (req, res) => {
-    const data = await this.authModel.register()
-    res.end(data)
+  put = async (req, res) => {
+    const data = await this.authModel.put(req.params.id, req.body)
+    res.status(200).json(data)
+  }
+
+  delete = async (req, res) => {
+    const data = await this.authModel.delete(req.params.id)
+    res.status(200).json(data)
   }
 }
