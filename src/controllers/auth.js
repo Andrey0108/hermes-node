@@ -5,24 +5,23 @@ export class AuthController {
     this.authModel = authModel
   }
 
-  login = async (req, res) => {
-    const data = await this.authModel.login()
-    res.json(data)
+  get = async (req, res) => {
+    const data = await this.authModel.get()
+    res.status(200).json(data)
   }
 
-  logout = async (req, res) => {
-    const data = await this.authModel.logout()
-    res.end(data)
+  post = async (req, res) => {
+    const data = await this.authModel.post(req.body)
+    res.status(201).json(data)
+  }
+  
+  put = async (req, res) => {
+    const data = await this.authModel.put(req.params.id, req.body)
+    res.status(200).json(data)
   }
 
-  register = async (req, res) => {
-    const user = req.body
-    try {
-      user.password = await bcrypt.hash(user.password, 10)
-      const data = await this.authModel.register(req.body)
-      res.status(201).json(data)
-    } catch (e) {
-      res.status(409).json(e)
-    }
+  delete = async (req, res) => {
+    const data = await this.authModel.delete(req.params.id)
+    res.status(200).json(data)
   }
 }
