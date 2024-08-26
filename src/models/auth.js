@@ -1,6 +1,7 @@
 import { userSchema } from '../schemas/mongodb/user'
 
 export class AuthModel {
+
   async get () {
     const data = await userSchema.find().pretty()
     return data
