@@ -1,11 +1,11 @@
 import mongoose from 'mongoose'
-import 'dotenv/config'
+import { MONGO_CNN } from '../config.js'
 
-export const mongo = async () => {
+export const dbConnection = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_CNN)
-    console.log('Connect to Mongo DB')
-  } catch (e) {
-    console.error(e)
+    await mongoose.connect(MONGO_CNN)
+    console.log('Connected to mongo DB')
+  } catch (error) {
+    console.log(error)
   }
 }

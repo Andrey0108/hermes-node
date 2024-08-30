@@ -1,4 +1,4 @@
-import { customersSchema } from '../schemas/mongodb/customers'
+import { customersSchema } from '../../schemas/mongodb/reservations/customers.model.js'
 
 export class CustomersModel {
   async get () {
