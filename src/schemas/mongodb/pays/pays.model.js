@@ -1,10 +1,9 @@
-export class Pays {
-  constructor() {
-    this.id_pay = 0;
-    this.id_reservation = 0;
-    this.date_pay = new Date();
-    this.price = 0;
-    this.voucher = "";
-    this.status = "" || "R" || "P" || "N" || "A";
-  }
-}
+import { Schema } from 'mongoose'
+export const paysSchema = new Schema({
+  id_pay: Number,
+  id_reservation: Number,
+  date_pay: Date,
+  price: Number,
+  voucher: String,
+  status: String
+})
