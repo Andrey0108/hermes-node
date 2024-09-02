@@ -2,7 +2,7 @@ import { usersSchema } from '../schemas/mongodb/users/users.model.js'
 
 export class AuthModel {
   async get () {
-    const data = await usersSchema.find().pretty()
+    const data = await usersSchema.find()
     return data
   }
 
