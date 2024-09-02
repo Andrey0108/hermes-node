@@ -1,6 +1,6 @@
-import { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
-export const reserveCompanionsSchema = new Schema({
+const reserveCompanionsSchema = new Schema({
   id_reserve_companion: Number,
   id_reservation: Number,
   documentType: String,
@@ -12,3 +12,5 @@ export const reserveCompanionsSchema = new Schema({
   bloodType: String,
   eps: String
 })
+
+export const ReserveCompanionsSchema = model('ReserveCompanions', reserveCompanionsSchema)

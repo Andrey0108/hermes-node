@@ -1,5 +1,5 @@
-import { Schema } from 'mongoose'
-export const customersSchema = new Schema({
+import { Schema, model } from 'mongoose'
+const customersSchema = new Schema({
   id_customer: Number,
   id_user: Number,
   name: String,
@@ -14,3 +14,5 @@ export const customersSchema = new Schema({
   eps: String,
   state: Boolean
 })
+
+export const CustomersSchema = model('Customers', customersSchema)

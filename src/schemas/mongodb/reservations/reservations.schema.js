@@ -1,6 +1,6 @@
-import { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
-export const reservationsSchema = new Schema({
+const reservationsSchema = new Schema({
   id_reservation: Number,
   id_detail_programming_package: Number,
   id_customer: Number,
@@ -10,3 +10,5 @@ export const reservationsSchema = new Schema({
   travel_customer: Boolean,
   status: String
 })
+
+export const ReservationsSchema = model('Reservations', reservationsSchema)
