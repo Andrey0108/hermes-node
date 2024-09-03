@@ -1,4 +1,4 @@
-import UsersSchema from '../schemas/mongodb/users/users.model.js'
+import { UsersSchema } from '../schemas/mongodb/users/users.model.js'
 
 export class AuthModel {
   async login (email, password) {
