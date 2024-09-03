@@ -9,7 +9,10 @@ export class AuthModel {
         bcrypt
           .compare(password, user.password)
           .then((match) => {
-            if (match) return user
+            if (match) {
+              const { password: _, ...publicUser } = user
+              return publicUser
+            }
             return null
           })
           .catch((err) => {
