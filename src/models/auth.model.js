@@ -1,12 +1,23 @@
 import { UsersSchema } from '../schemas/mongodb/users/users.model.js'
+import bcrypt from 'bcryptjs'
 
 export class AuthModel {
   async login (email, password) {
-    const emailData = await UsersSchema.findOne({ email })
-    if (!emailData) {
-      return 'Email or Password not found'
-    } else {
-      return 'Logged'
-    }
+    await UsersSchema.findOne({ email })
+      .then((user) => {
+        if (!user) return null
+        bcrypt
+          .compare(password, user.password)
+          .then((match) => {
+            if (match) return user
+            return null
+          })
+          .catch((err) => {
+            return err
+          })
+      })
+      .catch((err) => {
+        return err
+      })
   }
 }
