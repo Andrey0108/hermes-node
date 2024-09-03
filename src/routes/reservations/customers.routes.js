@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { CustomersController } from '../controllers/customers.js'
+import { CustomersController } from '../../controllers/reservations/customers.controller.js'
 
 export const createCustomersRouter = ({ customersModel }) => {
   const customersRouter = Router()
@@ -7,6 +7,7 @@ export const createCustomersRouter = ({ customersModel }) => {
   const customersController = new CustomersController({ customersModel })
 
   customersRouter.get('/', customersController.get)
+  customersRouter.get('/:id', customersController.getById)
   customersRouter.post('/', customersController.post)
   customersRouter.put('/:id', customersController.put)
   customersRouter.delete('/:id', customersController.delete)

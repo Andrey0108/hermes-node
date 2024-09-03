@@ -1,6 +1,7 @@
 import express, { json } from 'express'
 import { corsMiddleware } from '../middlewares/cors.js'
 import { PORT } from '../config.js'
+import { dbConnection } from '../config/db.mongo.js'
 
 export class Server {
   constructor () {
@@ -10,7 +11,18 @@ export class Server {
     this.app.disable('x-powered-by')
   }
 
+  async dbConnection () {
+    try {
+      await dbConnection()
+      console.log('Database connected successfully')
+    } catch (error) {
+      console.error('Database connection failed', error)
+    }
+  }
+
   listen () {
-    this.app.listen(PORT, () => { console.log(`server listening on port http://localhost:${PORT}`) })
+    this.app.listen(PORT, () => {
+      console.log(`server listening on port http://localhost:${PORT}`)
+    })
   }
 }
