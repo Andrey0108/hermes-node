@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 export const usersSchema = new Schema({
   id_user: Number,
@@ -9,3 +9,5 @@ export const usersSchema = new Schema({
   password: String,
   state: Boolean
 })
+
+export const UsersSchema = model('Users', usersSchema)
