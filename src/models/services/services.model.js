@@ -1,8 +1,8 @@
-import { servicesSchema } from '../../schemas/mongodb/services/services.model.js'
+import { servicesSchema } from '../../schemas/mongodb/services/services.schema.js'
 
 export class ServicesModel {
   async get () {
-    const data = await servicesSchema.find().pretty()
+    const data = await servicesSchema.find()
     return data
   }
 

@@ -1,7 +1,9 @@
-export class RolePrivilege {
-  constructor () {
-    this.id_role_privilege = 0
-    this.id_role = 0
-    this.id_privilege = 0
-  }
-}
+import { Schema, model } from 'mongoose'
+
+const rolePrivilegesSchema = new Schema({
+  id_role_privilege: Number,
+  id_role: Number,
+  id_privilege: Number
+})
+
+export const RolePrivilegesSchema = model('RolePrivileges', rolePrivilegesSchema)

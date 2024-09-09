@@ -1,7 +1,9 @@
-export class Permissions {
-  constructor () {
-    this.id_permission = 0
-    this.name = ''
-    this.state = true
-  }
-}
+import { Schema, model } from 'mongoose'
+
+const permissionsSchema = new Schema({
+  id_permission: Number,
+  name: String,
+  state: Boolean
+})
+
+export const PermissionsSchema = model('Permissions', permissionsSchema)
