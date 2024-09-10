@@ -9,7 +9,7 @@ export const createCustomersRouter = ({ customersModel }) => {
   customersRouter.get('/', customersController.get)
   customersRouter.get('/:id', customersController.getById)
   customersRouter.post('/', customersController.post)
-  customersRouter.put('/:id', customersController.put)
+  customersRouter.patch('/:id', customersController.patch)
   customersRouter.delete('/:id', customersController.delete)
 
   return customersRouter
