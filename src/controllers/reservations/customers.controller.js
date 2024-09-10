@@ -9,6 +9,7 @@ export class CustomersController {
   }
 
   getById = async (req, res) => {
+    console.log('req.params.id', req.params.id)
     const data = await this.customersModel.getById(req.params.id)
     res.status(200).json(data)
   }
@@ -18,8 +19,8 @@ export class CustomersController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.customersModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.customersModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 

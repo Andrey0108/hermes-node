@@ -1,13 +1,12 @@
 import { Server } from './models/server.js'
 // routes
-import { createAuthRouter } from './routes/auth.routes.js'
+// import { createAuthRouter } from './routes/auth.routes.js'
 import { createCustomersRouter } from './routes/reservations/customers.routes.js'
 import { createPaysRouter } from './routes/pays/pays.routes.js'
 // models
 // import { AuthModel } from './models/auth.model.js'
 import { CustomersModel } from './models/reservations/customers.model.js'
 import { PaysModel } from './models/pays/pays.model.js'
-import './config/db.mongo.js'
 
 const server = new Server()
 // const authModel = new AuthModel()
