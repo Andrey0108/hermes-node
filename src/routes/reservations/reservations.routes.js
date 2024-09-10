@@ -9,7 +9,7 @@ export const createReservationsRouter = ({ reservationsModel }) => {
   reservationsRouter.get('/', reservationsController.get)
   reservationsRouter.get('/:id', reservationsController.getById)
   reservationsRouter.post('/', reservationsController.post)
-  reservationsRouter.put('/:id', reservationsController.put)
+  reservationsRouter.patch('/:id', reservationsController.patch)
   reservationsRouter.delete('/:id', reservationsController.delete)
 
   return reservationsRouter

@@ -18,8 +18,8 @@ export class PaysController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.paysModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.paysModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 

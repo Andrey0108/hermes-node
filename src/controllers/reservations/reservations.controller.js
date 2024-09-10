@@ -18,8 +18,8 @@ export class ReservationsController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.reservationsModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.reservationsModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 

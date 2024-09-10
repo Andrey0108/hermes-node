@@ -8,7 +8,7 @@ export const createPaysRouter = ({ paysModel }) => {
 
   paysRouter.get('/', paysController.get)
   paysRouter.post('/', paysController.post)
-  paysRouter.put('/:id', paysController.put)
+  paysRouter.patch('/:id', paysController.patch)
   paysRouter.delete('/:id', paysController.delete)
 
   return paysRouter

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/app.js",
-    "changes": "git fetch origin develop && git pull origin develop && npm i"
+    "changes": "git fetch origin develop && git pull origin develop && npm i --no-fund --no-audit"
   },
   "keywords": [],
   "author": "",

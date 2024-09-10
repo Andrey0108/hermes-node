@@ -16,7 +16,7 @@ export class PaysModel {
     return data
   }
 
-  async put (id, obj) {
+  async patch (id, obj) {
     const data = await PaysSchema.findOneAndUpdate({ id }, obj)
     return data
   }

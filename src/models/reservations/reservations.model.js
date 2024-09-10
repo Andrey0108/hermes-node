@@ -6,8 +6,8 @@ export class ReservationsModel {
     return data
   }
 
-  async getById (id) {
-    const data = await ReservationsSchema.findOne({ id })
+  async getById (id_reservation) {
+    const data = await ReservationsSchema.findOne({ id_reservation })
     return data
   }
 
@@ -16,13 +16,13 @@ export class ReservationsModel {
     return data
   }
 
-  async put (id, obj) {
-    const data = await ReservationsSchema.findOneAndUpdate({ id }, obj)
+  async patch (id_reservation, obj) {
+    const data = await ReservationsSchema.findOneAndUpdate({ id_reservation }, obj)
     return data
   }
 
-  async delete (id) {
-    const data = await ReservationsSchema.findOneAndDelete({ id })
+  async delete (id_reservation) {
+    const data = await ReservationsSchema.findOneAndDelete({ id_reservation })
     return data
   }
 }

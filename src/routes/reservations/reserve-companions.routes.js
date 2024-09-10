@@ -9,7 +9,7 @@ export const createReserveCompanionsRouter = ({ reserveCompanionsModel }) => {
   reserveCompanionsRouter.get('/', reserveCompanionsController.get)
   reserveCompanionsRouter.get('/:id', reserveCompanionsController.getById)
   reserveCompanionsRouter.post('/', reserveCompanionsController.post)
-  reserveCompanionsRouter.put('/:id', reserveCompanionsController.put)
+  reserveCompanionsRouter.patch('/:id', reserveCompanionsController.patch)
   reserveCompanionsRouter.delete('/:id', reserveCompanionsController.delete)
 
   return reserveCompanionsRouter

@@ -18,8 +18,8 @@ export class CompanionsController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.companionsModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.companionsModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 
