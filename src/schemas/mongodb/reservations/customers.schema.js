@@ -1,18 +1,19 @@
 import { Schema, model } from 'mongoose'
+
 const customersSchema = new Schema({
-  id_customer: { Number, required: true },
-  id_user: { Number, required: true },
-  name: { String, required: true },
-  lastName: { String, required: true },
-  phone: { String, required: true },
-  address: { String, required: true },
-  country: { Number, required: true },
-  departament: { Number, required: true },
-  municipality: { Number, required: true },
-  sex: { String, required: true, enum: ['h', 'm'] },
-  bloodType: { String, required: true, enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] },
-  eps: { String, required: true },
-  state: { Boolean, default: true }
+  id_customer: { type: Number, required: true },
+  id_user: { type: Number, required: true },
+  name: { type: String, required: true },
+  lastName: { type: String, required: true },
+  phone: { type: String, required: true },
+  address: { type: String, required: true },
+  country: { type: Number, required: true },
+  departament: { type: Number, required: true },
+  municipality: { type: Number, required: true },
+  sex: { type: String, required: true, enum: ['h', 'm'] },
+  bloodType: { type: String, required: true, enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] },
+  eps: { type: String, required: true },
+  state: { type: Boolean, default: true }
 })
 
 export const CustomersSchema = model('Customers', customersSchema)
