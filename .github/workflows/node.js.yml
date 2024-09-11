@@ -29,3 +29,4 @@ jobs:
       with:
         cache: 'npm'
     - run: npm i --no-fund --no-audit
+    - run: npm run lint
