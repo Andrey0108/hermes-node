@@ -1,9 +1,9 @@
 import { Schema, model } from 'mongoose'
 
-const rolSchema = new Schema({
+const roleSchema = new Schema({
   id_rol: { type: Number, required: true },
   name: { type: String, required: true },
   state: { type: Boolean, required: true }
 })
 
-export const RolSchema = model('Role', rolSchema)
+export const RoleSchema = model('Role', roleSchema)
