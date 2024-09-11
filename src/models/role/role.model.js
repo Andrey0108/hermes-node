@@ -1,4 +1,4 @@
-import { RoleSchema } from '../../schemas/mongodb/role/role.schema.js'
+import { RoleSchema } from '../../schemas/mongodb/role/role.schema'
 
 export class RoleModel {
   async get () {
@@ -12,12 +12,12 @@ export class RoleModel {
   }
 
   async put (id, obj) {
-    const data = await RoleSchema.updateOne(id, obj)
+    const data = await RoleSchema.findOneAndUpdate({ id }, obj)
     return data
   }
 
   async delete (id) {
-    const data = await RoleSchema.deleteOne(id)
+    const data = await RoleSchema.findOneAndDelete({ id })
     return data
   }
 }
