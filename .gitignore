@@ -1,5 +1,3 @@
 .env
 database
 node_modules
-package-lock.json
-package.txt
