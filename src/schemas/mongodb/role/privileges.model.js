@@ -1,7 +1,9 @@
-export class Privileges {
-    constructor(){
-    this.id_privilege= 0;
-    this.name="";
-    this.id_permission=0;
-    }
-}
+import { Schema, model } from 'mongoose'
+
+const privilegesSchema = new Schema({
+  id_privilege: Number,
+  name: String,
+  id_permission: Number
+})
+
+export const PrivilegesSchema = model('Privileges', privilegesSchema)
