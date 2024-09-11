@@ -1,0 +1,31 @@
+### Recuperar todo
+GET http://localhost:3000/pays
+
+### Recuperar un dato por id
+GET http://localhost:3000/pays/1
+
+
+### Crear un dato con POST
+POST http://localhost:3000/pays
+Content-Type: application/json
+
+{
+  "id_pay": 1,
+  "id_reservation": 1,
+  "date_pay": "2021-10-10",
+  "price": 100,
+  "voucher": "nequi-8998988855-2021-10-10.jpg",
+  "status": "R"
+}
+
+
+### Borrar un dato
+DELETE http://localhost:3000/pays/1
+
+### Actualizar un dato
+PATCH http://localhost:3000/pays/1
+Content-Type: application/json
+
+{
+  "status": "P"
+}

@@ -1,0 +1,36 @@
+### Recuperar todo
+GET http://localhost:3000/reserve-companions
+
+### Recuperar un dato por id
+GET http://localhost:3000/reserve-companions/1
+
+
+### Crear un dato con POST
+POST http://localhost:3000/reserve-companions
+Content-Type: application/json
+
+# Crear un json con los datos del schema:
+  
+  {
+    "id_reserve_companion": 1,
+    "id_reservation": 1,
+    "documentType": "CC",
+    "identification": "123456789",
+    "name": "Juan",
+    "lastName": "Perez",
+    "phone": "123456",
+    "sex": "h",
+    "bloodType": "A+",
+    "eps": "Sura"
+  }
+
+### Borrar un dato
+DELETE http://localhost:3000/reserve-companions/1
+
+### Actualizar un dato
+PATCH http://localhost:3000/reserve-companions/1
+Content-Type: application/json
+
+{
+  "state": false
+}
