@@ -28,6 +28,6 @@ jobs:
       with:
         node-version: 20
         cache: 'npm'
-    - run: npm ci --legacy-peer-deps --no-fund --no-audit
+    - run: npm i --no-fund --no-audit
     - run: npm run lint
     - run: npm run build
