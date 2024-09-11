@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/app.js",
+    "lint": "standard --fix",
     "changes": "git fetch origin develop && git pull origin develop && npm i --no-fund --no-audit"
   },
   "keywords": [],
