@@ -6,7 +6,7 @@ export class ReservationsModel {
     return data
   }
 
-  async getById (id_reservation) {
+  async getById (id_reservation) { 
     const data = await ReservationsSchema.findOne({ id_reservation })
     return data
   }
