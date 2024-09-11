@@ -8,7 +8,7 @@ export const createAuthRouter = ({ authModel }) => {
 
   authRouter.get('/', authController.get)
   authRouter.post('/', authController.post)
-  authRouter.put('/:id', authController.put)
+  authRouter.patch('/:id', authController.patch)
   authRouter.delete('/:id', authController.delete)
 
   return authRouter

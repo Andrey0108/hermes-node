@@ -18,8 +18,8 @@ export class ReserveCompanionsController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.reserveCompanionsModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.reserveCompanionsModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 

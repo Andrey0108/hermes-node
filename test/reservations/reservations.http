@@ -1,0 +1,35 @@
+### Recuperar todo
+GET http://localhost:3000/reservations
+
+### Recuperar un dato por id
+GET http://localhost:3000/reservations/1
+
+
+### Crear un dato con POST
+POST http://localhost:3000/reservations
+Content-Type: application/json
+
+# Crear un json para crear las reservas con los datos del schema:
+  
+  {
+    "id_reservation": 1,
+    "id_detail_programming_package": 1,
+    "id_customer": 1,
+    "date_reservation": "2021-10-10",
+    "price_reservation": 100,
+    "number_companions": 1,
+    "travel_customer": true,
+    "status": "N"
+  }
+
+
+### Borrar un dato
+DELETE http://localhost:3000/reservations/1
+
+### Actualizar un dato
+PATCH http://localhost:3000/reservations/1
+Content-Type: application/json
+
+{
+  "state": false
+}

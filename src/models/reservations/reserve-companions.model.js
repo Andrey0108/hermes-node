@@ -6,8 +6,8 @@ export class ReserveCompanionsModel {
     return data
   }
 
-  async getById (id) {
-    const data = await ReserveCompanionsSchema.findOne({ id })
+  async getById (id_reserve_companion) {
+    const data = await ReserveCompanionsSchema.findOne({ id_reserve_companion })
     return data
   }
 
@@ -16,13 +16,13 @@ export class ReserveCompanionsModel {
     return data
   }
 
-  async put (id, obj) {
-    const data = await ReserveCompanionsSchema.findOneAndUpdate({ id }, obj)
+  async patch (id_reserve_companion, obj) {
+    const data = await ReserveCompanionsSchema.findOneAndUpdate({ id_reserve_companion }, obj)
     return data
   }
 
-  async delete (id) {
-    const data = await ReserveCompanionsSchema.findOneAndDelete({ id })
+  async delete (id_reserve_companion) {
+    const data = await ReserveCompanionsSchema.findOneAndDelete({ id_reserve_companion })
     return data
   }
 }
