@@ -1,23 +1,28 @@
+import bcryptjs from 'bcryptjs'
 import { UsersSchema } from '../schemas/mongodb/users/users.model.js'
-import { encrypt, compare } from '../helpers/handleBcrypt.js'
-import { tokenSign } from '../helpers/generateJWT.js'
+import { SALT_ROUNDS } from '../config.js'
 
 export class AuthModel {
   async login (authLogin) {
-    const { email, password } = authLogin
-    await UsersSchema.findOne({ email })
-      .then(async (user) => {
-        if (!user) return null
-        const checkPassword = compare(password, user.password)
-        const tokenSession = await tokenSign(user)
-      })
-      .catch((err) => {
-        return err
-      })
+    const data = await UsersSchema.findOne({ email: authLogin.email })
+    if (!data) throw new Error('User not found')
+
+    const isValid = await bcryptjs.compare(authLogin.password, data.password)
+    if (!isValid) throw new Error('Invalid password')
+
+    return {
+      id_role: data.id_role,
+      identification: data.identification,
+      email: data.email
+    }
   }
 
   async register (authRegister) {
-    authRegister.password = encrypt(authRegister.password)
+    const hashedPassword = await bcryptjs.hash(
+      authRegister.password,
+      SALT_ROUNDS
+    )
+    authRegister.password = hashedPassword
     const data = await UsersSchema(authRegister).save()
     return data
   }

@@ -7,5 +7,6 @@ export const {
   DB_DATABASE = 'hermes',
   DB_PORT = '27017',
   JWT_SECRET = 'schermes',
-  JWT_EXPIRES = '1d'
+  JWT_EXPIRES = '1d',
+  SALT_ROUNDS = 10
 } = process.env

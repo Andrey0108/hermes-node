@@ -6,7 +6,9 @@ export const createAuthRouter = ({ authModel }) => {
 
   const authController = new AuthController({ authModel })
 
-  authRouter('/login', authController.login)
+  authRouter.post('/login', authController.login)
+  authRouter.post('/register', authController.register)
+  authRouter.post('/logout', authController.logout)
 
   return authRouter
 }
