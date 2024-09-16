@@ -1,17 +1,26 @@
-import pkg from 'jsonwebtoken'
-const { sign } = pkg
-// jwt.io
-export const generateJWT = (uid = '') => {
-  return new Promise((resolve, reject) => {
-    const payload = { uid } // Data
-    sign(payload, process.env.SECRET_KEY, {
-      expiresIn: '3m'
-    }, (err, token) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(token)
-      }
-    })
-  })
+import jwt from 'jsonwebtoken'
+
+export const tokenSign = async (user) => {
+  return jwt.sign(
+    {
+      _id: user._id,
+      role: user.id_role
+    },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_EXPIRES
+    }
+  )
+}
+
+export const verifyToken = async (token) => {
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET)
+  } catch (e) {
+    return e
+  }
+}
+
+export const decodeSign = (token) => {
+  return token
 }
