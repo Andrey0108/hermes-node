@@ -1,33 +1,13 @@
 import { Schema, model } from 'mongoose'
-import bcrypt from 'bcryptjs'
 
 export const usersSchema = new Schema({
-  id_user: Number,
-  id_role: Number,
-  documentType: String,
-  identification: String,
-  email: String,
-  password: String,
-  state: Boolean
-})
-
-usersSchema.pre('save', function (next) {
-  bcrypt
-    .genSalt(10)
-    .then((salts) => {
-      bcrypt
-        .hash(this.password, salts)
-        .then((hash) => {
-          this.password = hash
-          next()
-        })
-        .catch((err) => {
-          next(err)
-        })
-    })
-    .catch((err) => {
-      next(err)
-    })
+  id_user: { type: Number, required: true, unique: true },
+  id_role: { type: Number, required: true },
+  documentType: { type: String, required: true },
+  identification: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true, minlength: 6 },
+  state: { type: Boolean, default: true }
 })
 
 export const UsersSchema = model('Users', usersSchema)

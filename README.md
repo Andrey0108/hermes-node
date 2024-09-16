@@ -19,9 +19,9 @@ Proyecto #Hermes para la agencia de viajes #ParcheTravels
 ---
 
 - Crear fork del repositorio:
-[Hermes Backend](https://github.com/jfelipeq14/hermes-node)
+  [Hermes Backend](https://github.com/jfelipeq14/hermes-node)
 
-- Clonar el repositorio (debe tener tu nombre de usuario:
+- Clonar el repositorio (debe tener tu nombre de usuario):
 
       git clone https://github.com/username/hermes-node
 
