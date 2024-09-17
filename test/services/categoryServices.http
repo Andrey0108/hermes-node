@@ -1,0 +1,23 @@
+### Recuperar todo
+GET http://localhost:3000/categoryServices
+
+### Recuperar un dato por id
+GET http://localhost:3000/categoryServices/1
+
+
+### Crear un dato con POST
+POST http://localhost:3000/categoryServices
+Content-Type: application/json
+
+{
+  "id_categoryService": 1,
+  "name": "Bus",
+}
+
+
+### Borrar un dato
+DELETE http://localhost:3000/categoryServices/1
+
+### Actualizar un dato
+PATCH http://localhost:3000/categoryServices/1
+Content-Type: application/json
