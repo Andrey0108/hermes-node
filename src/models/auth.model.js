@@ -23,6 +23,7 @@ export class AuthModel {
       SALT_ROUNDS
     )
     authRegister.password = hashedPassword
+
     const data = await UsersSchema(authRegister).save()
     return data
   }
