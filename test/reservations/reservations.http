@@ -12,9 +12,9 @@ Content-Type: application/json
 # Crear un json para crear las reservas con los datos del schema:
   
   {
-    "id_reservation": 1,
+    "idReservation": 1,
     "id_detail_programming_package": 1,
-    "id_customer": 1,
+    "idCustomer": 1,
     "date_reservation": "2021-10-10",
     "price_reservation": 100,
     "number_companions": 1,

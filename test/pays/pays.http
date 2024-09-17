@@ -10,8 +10,8 @@ POST http://localhost:3000/pays
 Content-Type: application/json
 
 {
-  "id_pay": 1,
-  "id_reservation": 1,
+  "idPay": 1,
+  "idReservation": 1,
   "date_pay": "2021-10-10",
   "price": 100,
   "voucher": "nequi-8998988855-2021-10-10.jpg",
