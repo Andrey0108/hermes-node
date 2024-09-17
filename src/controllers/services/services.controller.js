@@ -8,6 +8,11 @@ export class ServicesController {
     res.status(200).json(data)
   }
 
+  getById = async (req, res) => {
+    const data = await this.servicesModel.getById(req.params.id)
+    res.status(200).json(data)
+  }
+
   post = async (req, res) => {
     const data = await this.servicesModel.post(req.body)
     res.status(201).json(data)
