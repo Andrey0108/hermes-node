@@ -12,8 +12,8 @@ Content-Type: application/json
 # Crear un json con los datos del schema:
   
   {
-    "id_reserve_companion": 1,
-    "id_reservation": 1,
+    "idReserveCompanion": 1,
+    "idReservation": 1,
     "documentType": "CC",
     "identification": "123456789",
     "name": "Juan",

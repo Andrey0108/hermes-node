@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose'
 
 const customersSchema = new Schema({
-  id_customer: { type: Number, required: true },
+  idCustomer: { type: Number, required: true },
   id_user: { type: Number, required: true },
   name: { type: String, required: true },
   lastName: { type: String, required: true },

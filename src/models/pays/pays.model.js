@@ -6,8 +6,8 @@ export class PaysModel {
     return data
   }
 
-  async getById (id_pay) {
-    const data = await PaysSchema.findOne({ id_pay })
+  async getById (idPay) {
+    const data = await PaysSchema.findOne({ idPay })
     return data
   }
 
@@ -16,13 +16,13 @@ export class PaysModel {
     return data
   }
 
-  async patch (id_pay, obj) {
-    const data = await PaysSchema.findOneAndUpdate({ id_pay }, obj)
+  async patch (idPay, obj) {
+    const data = await PaysSchema.findOneAndUpdate({ idPay }, obj)
     return data
   }
 
-  async delete (id_pay) {
-    const data = await PaysSchema.findOneAndDelete({ id_pay })
+  async delete (idPay) {
+    const data = await PaysSchema.findOneAndDelete({ idPay })
     return data
   }
 }

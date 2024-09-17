@@ -6,8 +6,8 @@ export class CustomersModel {
     return data
   }
 
-  async getById (id_customer) {
-    const data = await CustomersSchema.findOne({ id_customer })
+  async getById (idCustomer) {
+    const data = await CustomersSchema.findOne({ idCustomer })
     return data
   }
 
@@ -16,13 +16,13 @@ export class CustomersModel {
     return data
   }
 
-  async patch (id_customer, obj) {
-    const data = await CustomersSchema.findOneAndUpdate({ id_customer }, obj)
+  async patch (idCustomer, obj) {
+    const data = await CustomersSchema.findOneAndUpdate({ idCustomer }, obj)
     return data
   }
 
-  async delete (id_customer) {
-    const data = await CustomersSchema.findOneAndDelete({ id_customer })
+  async delete (idCustomer) {
+    const data = await CustomersSchema.findOneAndDelete({ idCustomer })
     return data
   }
 }
