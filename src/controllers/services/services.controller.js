@@ -18,8 +18,8 @@ export class ServicesController {
     res.status(201).json(data)
   }
 
-  put = async (req, res) => {
-    const data = await this.servicesModel.put(req.params.id, req.body)
+  patch = async (req, res) => {
+    const data = await this.servicesModel.patch(req.params.id, req.body)
     res.status(200).json(data)
   }
 

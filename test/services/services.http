@@ -10,11 +10,11 @@ POST http://localhost:3000/services
 Content-Type: application/json
 
 {
-  "id_service": 1,
-  "id_categoryService": 1,
+  "idService": 1,
+  "idCategoryService": 1,
   "name": "Bus",
   "price": 100,
-  "state": "Activo"
+  "state": true
 }
 
 

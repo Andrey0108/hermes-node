@@ -11,6 +11,8 @@ Content-Type: application/json
 
 {
   "id_categoryService": 1,
+
+  
   "name": "Bus",
 }
 
