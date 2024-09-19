@@ -1,9 +1,14 @@
-export class DetailProgrammingPackages {
-  constructor() {
-    this.id_detail_programming_package = 0;
-    this.id_package = 0;
-    this.id_programation = 0;
-    this.status_programation_package = true;
-    this.price_package = 0;
-  }
-}
+import { Schema, model } from 'mongoose'
+
+const idDetailProgrammingPackage = new Schema({
+  id_detail_programming_package: { type: Number, required: true },
+  id_package: { type: Number, required: true },
+  id_programation: { type: Number, required: true },
+  status_programation_package: { type: Boolean, required: true },
+  price_package: { type: Number, required: true }
+})
+
+export const DetailProgrammingPackagesSchema = model(
+  'DetailProgrammingPackages',
+  idDetailProgrammingPackage
+)

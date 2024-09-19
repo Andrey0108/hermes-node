@@ -1,9 +1,11 @@
-export class ProgramationPackages {
-  constructor() {
-    this.id_programation = 0;
-    this.date_start = new Date();
-    this.date_end = new Date();
-    this.date_execution = new Date();
-    this.date_ending = new Date();
-  }
-}
+import { Schema, model } from 'mongoose'
+
+const programationPackagesSchema = new Schema({
+  id_programation: { type: Number, required: true },
+  date_start: { type: Date, required: true },
+  date_end: { type: Date, required: true },
+  date_execution: { type: Date, required: true },
+  date_ending: { type: Date, required: true }
+})
+
+export const ProgramationPackagesSchema = model('ProgramationPackages', programationPackagesSchema)
