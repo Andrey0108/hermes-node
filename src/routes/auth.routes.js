@@ -6,10 +6,9 @@ export const createAuthRouter = ({ authModel }) => {
 
   const authController = new AuthController({ authModel })
 
-  authRouter.get('/', authController.get)
-  authRouter.post('/', authController.post)
-  authRouter.patch('/:id', authController.patch)
-  authRouter.delete('/:id', authController.delete)
+  authRouter.post('/login', authController.login)
+  authRouter.post('/register', authController.register)
+  authRouter.post('/logout', authController.logout)
 
   return authRouter
 }

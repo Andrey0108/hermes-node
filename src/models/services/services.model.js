@@ -6,6 +6,11 @@ export class ServicesModel {
     return data
   }
 
+  async getById (id) {
+    const data = await ServicesSchema.findOne({ id })
+    return data
+  }
+
   async post (obj) {
     const data = await ServicesSchema.createOne(obj)
     return data

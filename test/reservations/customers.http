@@ -10,10 +10,10 @@ POST http://localhost:3000/customers
 Content-Type: application/json
 
 {
-  "id_customer": 1,
+  "idCustomer": 1,
   "id_user": 1,
-  "name": "Juan",
-  "lastName": "Quintero",
+  "name": "Felipe",
+  "lastName": "Gutierrez",
   "phone": "+573123456789",
   "address": "Cl 123 # 123 - 123",
   "country": 57,
