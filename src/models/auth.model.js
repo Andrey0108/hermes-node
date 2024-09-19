@@ -1,6 +1,7 @@
 import bcryptjs from 'bcryptjs'
 import { UsersSchema } from '../schemas/mongodb/users/users.model.js'
-import { SALT_ROUNDS } from '../config.js'
+
+const SALT_ROUNDS = 10
 
 export class AuthModel {
   async login (authLogin) {
@@ -11,7 +12,8 @@ export class AuthModel {
     if (!isValid) throw new Error('Invalid password')
 
     return {
-      id_role: data.id_role,
+      idUser: data.idUser,
+      idRole: data.idRole,
       identification: data.identification,
       email: data.email
     }

@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
   "id_customer": 1,
-  "id_user": 1,
+  "idUser": 1,
   "name": "Juan",
   "lastName": "Quintero",
   "phone": "+573123456789",
