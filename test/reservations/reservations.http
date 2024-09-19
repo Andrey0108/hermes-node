@@ -9,18 +9,16 @@ GET http://localhost:3000/reservations/1
 POST http://localhost:3000/reservations
 Content-Type: application/json
 
-# Crear un json para crear las reservas con los datos del schema:
-  
-  {
-    "idReservation": 1,
-    "id_detail_programming_package": 1,
-    "idCustomer": 1,
-    "date_reservation": "2021-10-10",
-    "price_reservation": 100,
-    "number_companions": 1,
-    "travel_customer": true,
-    "status": "N"
-  }
+{
+  "idReservation": 1,
+  "idDetailProgrammingPackage": 1,
+  "idCustomer": 1,
+  "dateReservation": "2021-10-10",
+  "priceReservation": 100,
+  "numberCompanions": 1,
+  "travelCustomer": true,
+  "status": "N"
+}
 
 
 ### Borrar un dato
@@ -31,5 +29,5 @@ PATCH http://localhost:3000/reservations/1
 Content-Type: application/json
 
 {
-  "state": false
+  "status": "N"
 }
