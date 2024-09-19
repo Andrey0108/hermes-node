@@ -2,7 +2,7 @@
 GET http://localhost:3000/services
 
 ### Recuperar un dato por id
-GET http://localhost:3000/services/1
+GET http://localhost:3000/services/3
 
 
 ### Crear un dato con POST
@@ -10,8 +10,8 @@ POST http://localhost:3000/services
 Content-Type: application/json
 
 {
-  "idService": 1,
-  "idCategoryService": 1,
+  "idService": 3,
+  "idCategoryService": 3,
   "name": "Bus",
   "price": 100,
   "state": true
@@ -19,12 +19,12 @@ Content-Type: application/json
 
 
 ### Borrar un dato
-DELETE http://localhost:3000/services/1
+DELETE http://localhost:3000/services/3
 
 ### Actualizar un dato
-PATCH http://localhost:3000/services/1
+PATCH http://localhost:3000/services/3
 Content-Type: application/json
 
 {
-  "status": true
+  "state": false
 }
