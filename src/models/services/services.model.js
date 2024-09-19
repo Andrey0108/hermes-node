@@ -6,23 +6,23 @@ export class ServicesModel {
     return data
   }
 
-  async getById (id) {
-    const data = await ServicesSchema.findOne({ id })
+  async getById (idService) {
+    const data = await ServicesSchema.findOne({ idService })
     return data
   }
 
   async post (obj) {
-    const data = await ServicesSchema.createOne(obj)
+    const data = await ServicesSchema(obj).save()
     return data
   }
 
-  async put (id, obj) {
-    const data = await ServicesSchema.findOneAndUpdate({ id }, obj)
+  async patch (idService, obj) {
+    const data = await ServicesSchema.findOneAndUpdate({ idService }, obj)
     return data
   }
 
-  async delete (id) {
-    const data = await ServicesSchema.findOneAndDelete({ id })
+  async delete (idService) {
+    const data = await ServicesSchema.findOneAndDelete({ idService })
     return data
   }
 }
