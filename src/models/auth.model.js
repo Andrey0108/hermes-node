@@ -1,6 +1,7 @@
 import bcryptjs from 'bcryptjs'
 import { UsersSchema } from '../schemas/mongodb/users/users.model.js'
-import { SALT_ROUNDS } from '../config.js'
+
+const SALT_ROUNDS = 10
 
 export class AuthModel {
   async login (authLogin) {
