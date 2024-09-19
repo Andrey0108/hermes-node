@@ -12,7 +12,8 @@ export class AuthModel {
     if (!isValid) throw new Error('Invalid password')
 
     return {
-      id_role: data.id_role,
+      idUser: data.idUser,
+      idRole: data.idRole,
       identification: data.identification,
       email: data.email
     }

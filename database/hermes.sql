@@ -29,12 +29,12 @@ SELECT * FROM privileges;
 
 DROP TABLE IF EXISTS roles CASCADE;
 CREATE TABLE roles(
-    id_role SERIAL NOT NULL,
+    idRole SERIAL NOT NULL,
     name VARCHAR(60) NOT NULL,
     state BOOLEAN NOT NULL,
 
   
-    CONSTRAINT pk_idRole PRIMARY KEY (id_role),
+    CONSTRAINT pk_idRole PRIMARY KEY (idRole),
     CONSTRAINT uc_nameRole UNIQUE (name),
     CONSTRAINT chk_nameRole CHECK (name ~ '^[A-Z][a-zñ]{3,}[^\d\W_]*$')
 );
@@ -42,28 +42,28 @@ SELECT * FROM roles;
 
 DROP TABLE IF EXISTS role_privilege CASCADE;
 CREATE TABLE role_privileges(
-    id_role_privilege SERIAL NOT NULL,
-    id_role INTEGER NOT NULL,
+    idRole_privilege SERIAL NOT NULL,
+    idRole INTEGER NOT NULL,
     id_privilege INTEGER NOT NULL,
     
-    CONSTRAINT pk_idRolePrivilege PRIMARY KEY (id_role_privilege),
-    CONSTRAINT fk_idRole FOREIGN KEY (id_role) REFERENCES roles(id_role),
+    CONSTRAINT pk_idRolePrivilege PRIMARY KEY (idRole_privilege),
+    CONSTRAINT fk_idRole FOREIGN KEY (idRole) REFERENCES roles(idRole),
     CONSTRAINT fk_idPrivilege FOREIGN KEY (id_privilege) REFERENCES privileges(id_privilege)
 );
 SELECT * FROM role_privilege;
 
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users( 
-    id_user SERIAL NOT NULL,
-    id_role INTEGER NOT NULL,
+    idUser SERIAL NOT NULL,
+    idRole INTEGER NOT NULL,
     documentType VARCHAR(5) NOT NULL,
     identification VARCHAR(60) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     state BOOLEAN,
 
-    CONSTRAINT pk_idUser PRIMARY KEY (id_user),
-    CONSTRAINT fk_idRoleUser FOREIGN KEY (id_role) REFERENCES roles(id_role),
+    CONSTRAINT pk_idUser PRIMARY KEY (idUser),
+    CONSTRAINT fk_idRoleUser FOREIGN KEY (idRole) REFERENCES roles(idRole),
     CONSTRAINT chk_documentTypeUser CHECK (documentType ~ '^(CC|CE|PA|SC|CD|TE|PEP|AS|DU|CCEX|CEEX|PAEX|SCEX|CDEX|TEX|RNEX|PEPEX|ASEX)$'),
     CONSTRAINT chk_identificationUser CHECK (identification ~ '^[a-z0-9]{6,}$'),
     CONSTRAINT chk_emailUser CHECK (email ~ '^[a-z0-9.!#$%&*+/=?^_`{|}~-]+@[a-z0-9-]+\.[a-z0-9.]{2,}$')
@@ -180,7 +180,7 @@ SELECT * FROM detail_programming_packages_service;
 DROP TABLE IF EXISTS customers CASCADE;
 CREATE TABLE customers(
     idCustomer SERIAL NOT NULL,
-    id_user INTEGER NOT NULL,
+    idUser INTEGER NOT NULL,
     name VARCHAR(60) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     phone VARCHAR(15) NOT NULL,
@@ -194,7 +194,7 @@ CREATE TABLE customers(
     state BOOLEAN NOT NULL,
     
     CONSTRAINT pk_idCustomer PRIMARY KEY (idCustomer),
-    CONSTRAINT fk_idUser FOREIGN KEY (id_user) REFERENCES users(id_user),
+    CONSTRAINT fk_idUser FOREIGN KEY (idUser) REFERENCES users(idUser),
     CONSTRAINT chk_nameCustomer CHECK (name ~ '^[A-Z][a-zñ]{3,}[^\d\W_]*$'),
     CONSTRAINT chk_lastNameCustomer CHECK (lastName ~ '^[A-Z][a-zñ]{3,}[^\d\W_]*$'),
     CONSTRAINT chk_phoneCustomer CHECK (phone ~ '^\+?[0-9]{1,3}[0-9]{7,}$'),

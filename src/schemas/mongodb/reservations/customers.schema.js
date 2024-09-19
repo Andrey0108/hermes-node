@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose'
 
 const customersSchema = new Schema({
   idCustomer: { type: Number, required: true },
-  id_user: { type: Number, required: true },
+  idUser: { type: Number, required: true },
   name: { type: String, required: true },
   lastName: { type: String, required: true },
   phone: { type: String, required: true },

@@ -14,7 +14,7 @@ Content-Type: application/json
   "idDetailProgrammingPackage": 1,
   "idCustomer": 1,
   "dateReservation": "2021-10-10",
-  "priceReservation": 100,
+  "priceReservation": 100000,
   "numberCompanions": 1,
   "travelCustomer": true,
   "status": "N"
