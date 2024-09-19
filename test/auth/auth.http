@@ -1,0 +1,21 @@
+### Register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "id_user": 1,
+  "id_role": 1,
+  "documentType": "CC",
+  "identification": "8998988855",
+  "email": "felipe@gmail.com",
+  "password": "Felipe14"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "felipe@gmail.com",
+  "password": "Felipe14"
+}

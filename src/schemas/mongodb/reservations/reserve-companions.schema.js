@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose'
 
 const reserveCompanionsSchema = new Schema({
-  id_reserve_companion: { type: Number, required: true },
-  id_reservation: { type: Number, required: true },
+  idReserveCompanion: { type: Number, required: true },
+  idReservation: { type: Number, required: true },
   documentType: { type: String, required: true },
   identification: { type: String, required: true },
   name: { type: String, required: true },

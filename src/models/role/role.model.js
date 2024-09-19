@@ -6,6 +6,11 @@ export class RoleModel {
     return data
   }
 
+  async getById (id) {
+    const data = await RoleSchema.findOne({ id })
+    return data
+  }
+
   async post (obj) {
     const data = await RoleSchema.createOne(obj)
     return data
