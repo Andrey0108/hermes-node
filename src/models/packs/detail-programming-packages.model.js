@@ -1,28 +1,28 @@
-import { DetailProgrammingPackage } from '../../schemas/mongodb/packs/detail-programming-packages.schema.js'
+import { DetailProgrammingPackagesSchema } from '../../schemas/mongodb/packs/detail-programming-packages.schema.js'
 
-export class DetailProgrammingPackageModel {
+export class DetailProgrammingPackagesSchemaModel {
   async get () {
-    const data = await DetailProgrammingPackage.find()
+    const data = await DetailProgrammingPackagesSchema.find()
     return data
   }
 
-  async getById (idDetailProgrammingPackage) {
-    const data = await DetailProgrammingPackage.findOne({ idDetailProgrammingPackage })
+  async getById (idDetailProgrammingPackagesSchema) {
+    const data = await DetailProgrammingPackagesSchema.findOne({ idDetailProgrammingPackagesSchema })
     return data
   }
 
   async post (obj) {
-    const data = await DetailProgrammingPackage(obj).save()
+    const data = await DetailProgrammingPackagesSchema(obj).save()
     return data
   }
 
-  async patch (idDetailProgrammingPackage, obj) {
-    const data = await DetailProgrammingPackage.findOneAndUpdate({ idDetailProgrammingPackage }, obj)
+  async patch (idDetailProgrammingPackagesSchema, obj) {
+    const data = await DetailProgrammingPackagesSchema.findOneAndUpdate({ idDetailProgrammingPackagesSchema }, obj)
     return data
   }
 
-  async delete (idDetailProgrammingPackage) {
-    const data = await DetailProgrammingPackage.findOneAndDelete({ idDetailProgrammingPackage })
+  async delete (idDetailProgrammingPackagesSchema) {
+    const data = await DetailProgrammingPackagesSchema.findOneAndDelete({ idDetailProgrammingPackagesSchema })
     return data
   }
 }

@@ -1,28 +1,28 @@
-import { DetailPackageServicesSchema } from '../../schemas/mongodb/packs/detail-package-service.schema.js'
+import { DetailPackageServiceSchema } from '../../schemas/mongodb/packs/detail-package-service.schema.js'
 
 export class DetailPackageServicesModel {
   async get () {
-    const data = await DetailPackageServicesSchema.find()
+    const data = await DetailPackageServiceSchema.find()
     return data
   }
 
   async getById (idDetailPackageService) {
-    const data = await DetailPackageServicesSchema.findOne({ idDetailPackageService })
+    const data = await DetailPackageServiceSchema.findOne({ idDetailPackageService })
     return data
   }
 
   async post (obj) {
-    const data = await DetailPackageServicesSchema(obj).save()
+    const data = await DetailPackageServiceSchema(obj).save()
     return data
   }
 
   async patch (idDetailPackageService, obj) {
-    const data = await DetailPackageServicesSchema.findOneAndUpdate({ idDetailPackageService }, obj)
+    const data = await DetailPackageServiceSchema.findOneAndUpdate({ idDetailPackageService }, obj)
     return data
   }
 
   async delete (idDetailPackageService) {
-    const data = await DetailPackageServicesSchema.findOneAndDelete({ idDetailPackageService })
+    const data = await DetailPackageServiceSchema.findOneAndDelete({ idDetailPackageService })
     return data
   }
 }
