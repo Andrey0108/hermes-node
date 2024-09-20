@@ -2,12 +2,12 @@ import { Schema, model } from 'mongoose'
 
 const reservationsSchema = new Schema({
   idReservation: { type: Number, required: true, unique: true },
-  id_detail_programming_package: { type: Number, required: true },
+  idDetailProgrammingPackage: { type: Number, required: true },
   idCustomer: { type: Number, required: true },
-  date_reservation: { type: Date, default: Date.now },
-  price_reservation: { type: Number, required: true },
-  number_companions: { type: Number, default: 0 },
-  travel_customer: { type: Boolean, default: false },
+  dateReservation: { type: Date, default: Date.now },
+  priceReservation: { type: Number, required: true },
+  numberCompanions: { type: Number, default: 0 },
+  travelCustomer: { type: Boolean, default: false },
   status: {
     type: String,
     required: true,
