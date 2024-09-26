@@ -48,6 +48,7 @@ server.app.use('/reserve-companions', createReserveCompanionsRouter({ reserveCom
 server.app.use('/pays', createPaysRouter({ paysModel }))
 server.app.use('/services', createServicesRouter({ servicesModel }))
 server.app.use('/users', createUsersRouter({ usersModel }))
+
 // server.app.use('/detail-package-service', createDetailPackageServicesRouter({ detailPackageServicesModel }))
 // server.app.use('/detail-programming-packages-service', createDetailProgrammingPackageServiceRouter({ detailProgrammingPackagesServiceModel }))
 // server.app.use('/detail-programming-package', createDetailProgrammingPackageRouter({ detailProgrammingPackageModel }))
