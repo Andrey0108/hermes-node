@@ -6,9 +6,9 @@ Content-Type: application/json
   "idUser": 1,
   "idRole": 1,
   "documentType": "CC",
-  "identification": "899898",
-  "email": "juan@gmail.com",
-  "password": "Juan14"
+  "identification": "89989888",
+  "email": "jfelipe@gmail.com",
+  "password": "jFelipe14"
 }
 
 ### Login
@@ -16,6 +16,6 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "email": "juan@gmail.com",
-  "password": "Juan14"
+  "email": "jfelipe@gmail.com",
+  "password": "jFelipe14"
 }
