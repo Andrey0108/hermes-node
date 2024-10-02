@@ -1,4 +1,4 @@
-import { ProgramationPackagesSchema } from '../../schemas/mongodb/packs/programation-packages.schema'
+import { ProgramationPackagesSchema } from '../../schemas/mongodb/packs/programation-packages.schema.js'
 
 export class ProgramationPackagesModel {
   async get () {

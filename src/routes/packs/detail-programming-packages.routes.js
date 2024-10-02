@@ -2,15 +2,15 @@ import { Router } from 'express'
 import { DetailProgrammingPackageController } from '../../controllers/packs/detail-programming-packages.controller.js'
 
 export const createDetailProgrammingPackageRouter = ({ detailProgrammingPackageModel }) => {
-  const detailProgrammingPackageControllerRouter = Router()
+  const detailProgrammingPackageRouter = Router()
 
   const detailProgrammingPackageControllerController = new DetailProgrammingPackageController({ detailProgrammingPackageModel })
 
-  detailProgrammingPackageControllerRouter.get('/', detailProgrammingPackageControllerController.get)
-  detailProgrammingPackageControllerRouter.get('/:id', detailProgrammingPackageControllerController.getById)
-  detailProgrammingPackageControllerRouter.post('/', detailProgrammingPackageControllerController.post)
-  detailProgrammingPackageControllerRouter.patch('/:id', detailProgrammingPackageControllerController.patch)
-  detailProgrammingPackageControllerRouter.delete('/:id', detailProgrammingPackageControllerController.delete)
+  detailProgrammingPackageRouter.get('/', detailProgrammingPackageControllerController.get)
+  detailProgrammingPackageRouter.get('/:id', detailProgrammingPackageControllerController.getById)
+  detailProgrammingPackageRouter.post('/', detailProgrammingPackageControllerController.post)
+  detailProgrammingPackageRouter.patch('/:id', detailProgrammingPackageControllerController.patch)
+  detailProgrammingPackageRouter.delete('/:id', detailProgrammingPackageControllerController.delete)
 
-  return detailProgrammingPackageControllerRouter
+  return detailProgrammingPackageRouter
 }

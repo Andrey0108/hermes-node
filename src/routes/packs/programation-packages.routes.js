@@ -1,16 +1,16 @@
 import { Router } from 'express'
-import { ProgramationprogramationPackagesControllerController } from '../../controllers/packs/programation-ProgramationPackagesController.controller.js'
+import { ProgramationPackagesController } from '../../controllers/packs/programation-packages.controller.js'
 
-export const createprogramationPackagesControllerRouter = ({ ProgramationPackagesModel }) => {
-  const ProgramationPackagesControllerControllerRouter = Router()
+export const createProgramationPackagesRouter = ({ programationPackagesModel }) => {
+  const programationPackagesRouter = Router()
 
-  const ProgramationPackagesControllerControllerController = new ProgramationprogramationPackagesControllerController({ ProgramationPackagesModel })
+  const programationPackagesController = new ProgramationPackagesController({ programationPackagesModel })
 
-  ProgramationPackagesControllerControllerRouter.get('/', ProgramationPackagesControllerControllerController.get)
-  ProgramationPackagesControllerControllerRouter.get('/:id', ProgramationPackagesControllerControllerController.getById)
-  ProgramationPackagesControllerControllerRouter.post('/', ProgramationPackagesControllerControllerController.post)
-  ProgramationPackagesControllerControllerRouter.patch('/:id', ProgramationPackagesControllerControllerController.patch)
-  ProgramationPackagesControllerControllerRouter.delete('/:id', ProgramationPackagesControllerControllerController.delete)
+  programationPackagesRouter.get('/', programationPackagesController.get)
+  programationPackagesRouter.get('/:id', programationPackagesController.getById)
+  programationPackagesRouter.post('/', programationPackagesController.post)
+  programationPackagesRouter.patch('/:id', programationPackagesController.patch)
+  programationPackagesRouter.delete('/:id', programationPackagesController.delete)
 
-  return ProgramationPackagesControllerControllerRouter
+  return programationPackagesRouter
 }

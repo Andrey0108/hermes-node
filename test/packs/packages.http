@@ -1,0 +1,30 @@
+### Recuperar todo
+GET http://localhost:3000/packages
+
+### Recuperar un dato por id
+GET http://localhost:3000/packages/1
+
+
+### Crear un dato con POST
+POST http://localhost:3000/packages
+Content-Type: application/json
+
+{
+  "idPackage":1,
+  "name":"juan",
+  "destination":"santa marta",
+  "price":100000,
+  "status":true
+}
+
+
+### Borrar un dato
+DELETE http://localhost:3000/packages/0
+
+### Actualizar un dato
+PATCH http://localhost:3000/packages/1
+Content-Type: application/json
+
+{
+  "status": false
+}

@@ -6,8 +6,8 @@ export class PackagesModel {
     return data
   }
 
-  async getById (idPackages) {
-    const data = await PackagesSchema.findOne({ idPackages })
+  async getById (idPackage) {
+    const data = await PackagesSchema.findOne({ idPackage })
     return data
   }
 
@@ -16,13 +16,13 @@ export class PackagesModel {
     return data
   }
 
-  async patch (idPackages, obj) {
-    const data = await PackagesSchema.findOneAndUpdate({ idPackages }, obj)
+  async patch (idPackage, obj) {
+    const data = await PackagesSchema.findOneAndUpdate({ idPackage }, obj)
     return data
   }
 
-  async delete (idPackages) {
-    const data = await PackagesSchema.findOneAndDelete({ idPackages })
+  async delete (idPackage) {
+    const data = await PackagesSchema.findOneAndDelete({ idPackage })
     return data
   }
 }
