@@ -11,6 +11,7 @@ export class AuthController {
       const token = jwt.sign(data, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRES
       })
+      Object.assign(data, { token })
       res
         .cookie('access_token', token, {
           httpOnly: true,
@@ -18,9 +19,11 @@ export class AuthController {
           sameSite: 'strict',
           maxAge: 1000 * 60 * 60
         })
-        .send({ data, token })
+        .send({ data })
     } catch (error) {
-      res.status(401).send(error.message)
+      res
+        .status(401)
+        .json({ error: 'No se pudo iniciar sesión con el usuario' })
     }
   }
 
@@ -29,11 +32,17 @@ export class AuthController {
       const { _id } = await this.authModel.register(req.body)
       res.status(200).json({ id: _id })
     } catch (error) {
-      res.status(400).send(error.message)
+      res.status(400).json({ error: 'No se pudo registrar el usuario' })
     }
   }
 
   logout = async (req, res) => {
-    res.clearCookie('access_token').send('Logged out')
+    try {
+      res.clearCookie('access_token').send('Logged out')
+    } catch (error) {
+      res
+        .status(400)
+        .json({ error: 'No se pudo cerrar la sesión del usuario' })
+    }
   }
 }

@@ -6,6 +6,6 @@ export const {
   DB_HOST = 'localhost',
   DB_DATABASE = 'hermes',
   DB_PORT = '27017',
-  JWT_SECRET = '#$$%&hermes!#$$%&',
+  JWT_SECRET = '!$$%&hermes!$$%&',
   JWT_EXPIRES = '1d'
 } = process.env
